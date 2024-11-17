@@ -38,7 +38,7 @@ A sample project which does the following:
 - `GET /health/`
 
 Example:
-- `13.201.4.22/image/1?depth_min=9000&depth_max=9500`
+- `http://13.126.174.40/image/1?depth_min=9000&depth_max=9500`
 * This API returns the image frame based on the depth_min and depth_max.
 * If depth_min or depth_max is not provided, the default values are applied.
 * The image frame is returned in jpeg format.

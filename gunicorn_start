@@ -1,0 +1,13 @@
+#!/bin/sh
+FASTAPIDIR="/app"
+USER=gunicorn
+GROUP=gunicorn
+NUM_WORKERS=3
+MAX_REQUESTS=0
+
+echo "Starting $NAME as `whoami`"
+
+cd $FASTAPIDIR || exit
+
+exec gunicorn -w $NUM_WORKERS --timeout 60 -k uvicorn.workers.UvicornWorker src.api.main:app -b 0.0.0.0:80
+echo "Gunicorn started..."
